@@ -1,96 +1,106 @@
-Overview
+Project Overview
 
-This project simulates a real-world gym membership management system built using Oracle SQL.
+This project simulates a real-world membership management system built using Oracle SQL. It models a subscription-based business (such as a gym membership system) with full lifecycle tracking, automated history logging, and KPI-driven reporting.
 
-It models:
+The system demonstrates how relational databases are used in operational systems and business intelligence reporting environments.
 
-Member lifecycle tracking
-Membership status management
-Automated status history logging
-KPI-driven business reporting
+Core Objectives:
+   Design a normalized relational database schema
+   Implement membership lifecycle tracking
+   Automate status history using PL/SQL triggers
+   Build reusable KPI and analytics queries
+   Generate scalable test datasets for simulation and analysis
 
-The system demonstrates how relational databases support operational and analytical decision-making in subscription-based businesses.
+System Architecture:
+   MEMBERSHIPS
+      |
+      | status_id
+      v
+   MEMBER_STATUS (lookup table)
+   
+   MEMBERSHIPS
+      |
+      | member_id
+      v
+   MEMBER_STATUS_HISTORY (audit log)
 
-System Architecture
-MEMBERSHIPS
-   |
-   | status_id
-   v
-MEMBER_STATUS (lookup table)
+Database Components:
+   1. Memberships Table
+      Stores core member information including:
+         Member identity
+         Agreement type
+         Payment amount
+         Current status
+   2. Member Status Table
+      Reference table defining valid membership states:
+         Prospect
+         Active
+         Frozen
+         Cancelled
+         Collections
+         Expired
+   3. Status History Table
+      Tracks all changes in member status over time for audit and reporting purposes.
 
-MEMBERSHIPS
-   |
-   | member_id
-   v
-MEMBER_STATUS_HISTORY (audit log)
-Key Features
-Database Design
-Fully normalized relational schema (3NF principles)
-Primary and foreign key constraints
-Lookup table for standardized status values
-Automation Layer
-PL/SQL trigger for automatic status history tracking
-Eliminates manual auditing requirements
-Analytics Layer
-KPI dashboard queries
-Revenue estimation
-Membership status distribution analysis
-Collections monitoring
-Scalable Data Model
-Supports 15–100+ synthetic member records
-Realistic membership lifecycle simulation
-Project Structure
-schema/        → Tables, constraints, views
-data/          → Seed datasets (15 and 100 row versions)
-automation/    → Triggers for lifecycle automation
-analytics/     → KPI and reporting queries
-docs/          → Documentation and ER diagram
-Business KPIs
+Automation Layer:
+   A PL/SQL trigger automatically manages membership lifecycle history:
+      Closes previous status records when changes occur
+      Inserts new status entries with timestamps
+      Ensures full auditability of member status changes
 
-This system supports operational reporting such as:
+Analytics and KPIs:
+   The system supports operational reporting and business intelligence queries, including:
+      Total active members
+      Membership status distribution
+      Collections rate percentage
+      Revenue estimation
+      Frozen and cancelled account tracking
 
-Total members
-Active members
-Frozen accounts
-Collections rate percentage
-Revenue estimates
-Membership status distribution
-How It Works
-Create database schema (tables and constraints)
-Load reference data (membership statuses)
-Insert member dataset (15 or 100 records)
-Enable trigger-based automation
-Run KPI and analytics queries
-Example KPI Output
-Metric	Value
-Total Members	100
-Active Members	62
-Collections Rate	8.5%
-Total Revenue	$2,340.00
-Skills Demonstrated
-Oracle SQL development
-PL/SQL trigger automation
-Relational database design
-Data modeling (OLTP systems)
-Business intelligence querying
-KPI and reporting logic design
-Scalable dataset generation
-Real-World Relevance
+These metrics simulate real-world reporting dashboards used in subscription-based businesses.
 
-This system simulates how subscription-based businesses manage:
+Data Generation:
+   The project includes scalable data generation scripts:
+      15-record dataset for testing
+      100-record dataset for simulation
+      Realistic distribution of membership statuses
+      Structured financial and agreement data
 
-Customer lifecycle tracking
-Payment status changes
-Revenue reporting
-Operational KPI monitoring
+Project Structure: 
+   schema/        Database tables, constraints, views
+   data/          Seed datasets (15 and 100 record sets)
+   automation/    PL/SQL triggers for automation
+   analytics/     KPI and reporting queries
+   docs/          Project documentation and diagrams
 
-It reflects patterns used in real CRM and membership platforms.
+Example KPI Output:
+   Metric | Value
+   Total Members | 100
+   Active Members | 62
+   Collections Rate | 8.5%
+   Total Revenue | 2,340.00
 
-Future Enhancements
-Power BI / Tableau integration
-Time-based churn and retention analysis
-Monthly snapshot reporting tables
-Stored procedures for automation workflows
-Author
+Skills Demonstrated:
+   Oracle SQL development
+   Relational database design
+   Data normalization (3NF principles)
+   PL/SQL trigger automation
+   Business intelligence query design
+   KPI development and reporting logic
+   Scalable dataset generation
 
-Built as a portfolio project demonstrating Oracle SQL database design, automation, and analytics capabilities.
+Real-World Application:
+   This system reflects core components of production environments used in:
+      Gym membership systems
+      Subscription-based SaaS platforms
+      Customer lifecycle management systems
+      Operational reporting dashboards
+
+Future Improvements:
+   Power BI / Tableau integration
+   Time-based churn and retention analysis
+   Monthly snapshot reporting tables
+   Stored procedures for lifecycle automation
+   Advanced cohort analysis
+
+Author:
+   Developed as a portfolio project to demonstrate Oracle SQL database design, automation using PL/SQL, and business intelligence reporting capabilities.
