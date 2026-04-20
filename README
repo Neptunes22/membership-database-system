@@ -98,6 +98,29 @@ Real-World Application:
       Customer lifecycle management systems
       Operational reporting dashboards
 
+
+How to Run:
+   1. Run schema scripts in /schema
+   2. Run seed data in /data
+   3. Run automation trigger in /automation
+   4. Run analytics queries in /analytics
+
+Sample Queries:
+   ##Active Members
+      SELECT COUNT(*) 
+      FROM memberships 
+      WHERE status_id = 2;
+
+   ##Collections Rate
+      SELECT ROUND(
+          SUM(CASE WHEN status_id = 5 THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2
+      ) AS collections_rate
+      FROM memberships;
+
+   ##Revenue Estimate
+      SELECT SUM(payment_amnt) AS total_revenue
+      FROM memberships;
+
 Future Improvements:
    Power BI / Tableau integration
    Time-based churn and retention analysis
@@ -107,3 +130,6 @@ Future Improvements:
 
 Author:
    Developed as a portfolio project to demonstrate Oracle SQL database design, automation using PL/SQL, and business intelligence reporting capabilities.
+
+
+
