@@ -1,0 +1,96 @@
+Overview
+
+This project simulates a real-world gym membership management system built using Oracle SQL.
+
+It models:
+
+Member lifecycle tracking
+Membership status management
+Automated status history logging
+KPI-driven business reporting
+
+The system demonstrates how relational databases support operational and analytical decision-making in subscription-based businesses.
+
+System Architecture
+MEMBERSHIPS
+   |
+   | status_id
+   v
+MEMBER_STATUS (lookup table)
+
+MEMBERSHIPS
+   |
+   | member_id
+   v
+MEMBER_STATUS_HISTORY (audit log)
+Key Features
+Database Design
+Fully normalized relational schema (3NF principles)
+Primary and foreign key constraints
+Lookup table for standardized status values
+Automation Layer
+PL/SQL trigger for automatic status history tracking
+Eliminates manual auditing requirements
+Analytics Layer
+KPI dashboard queries
+Revenue estimation
+Membership status distribution analysis
+Collections monitoring
+Scalable Data Model
+Supports 15–100+ synthetic member records
+Realistic membership lifecycle simulation
+Project Structure
+schema/        → Tables, constraints, views
+data/          → Seed datasets (15 and 100 row versions)
+automation/    → Triggers for lifecycle automation
+analytics/     → KPI and reporting queries
+docs/          → Documentation and ER diagram
+Business KPIs
+
+This system supports operational reporting such as:
+
+Total members
+Active members
+Frozen accounts
+Collections rate percentage
+Revenue estimates
+Membership status distribution
+How It Works
+Create database schema (tables and constraints)
+Load reference data (membership statuses)
+Insert member dataset (15 or 100 records)
+Enable trigger-based automation
+Run KPI and analytics queries
+Example KPI Output
+Metric	Value
+Total Members	100
+Active Members	62
+Collections Rate	8.5%
+Total Revenue	$2,340.00
+Skills Demonstrated
+Oracle SQL development
+PL/SQL trigger automation
+Relational database design
+Data modeling (OLTP systems)
+Business intelligence querying
+KPI and reporting logic design
+Scalable dataset generation
+Real-World Relevance
+
+This system simulates how subscription-based businesses manage:
+
+Customer lifecycle tracking
+Payment status changes
+Revenue reporting
+Operational KPI monitoring
+
+It reflects patterns used in real CRM and membership platforms.
+
+Future Enhancements
+Power BI / Tableau integration
+Time-based churn and retention analysis
+Monthly snapshot reporting tables
+Stored procedures for automation workflows
+Author
+
+Built as a portfolio project demonstrating Oracle SQL database design, automation, and analytics capabilities.
