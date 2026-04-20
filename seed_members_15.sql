@@ -1,0 +1,17 @@
+INSERT ALL
+INTO memberships VALUES (524928801,'John','Smith','Black Card',29.99,20001,2)
+INTO memberships VALUES (524928802,'Sarah','Johnson','Basic',10.00,20002,2)
+INTO memberships VALUES (524928803,'Mike','Brown','Black Card',29.99,20003,5)
+INTO memberships VALUES (524928804,'Emily','Davis','Basic',10.00,20004,3)
+INTO memberships VALUES (524928805,'Chris','Miller','Black Card',29.99,20005,2)
+INTO memberships VALUES (524928806,'Ashley','Wilson','Basic',10.00,20006,4)
+INTO memberships VALUES (524928807,'David','Moore','Black Card',29.99,20007,2)
+INTO memberships VALUES (524928808,'Jessica','Taylor','Black Card',29.99,20008,1)
+INTO memberships VALUES (524928809,'Daniel','Anderson','Basic',10.00,20009,2)
+INTO memberships VALUES (524928810,'Laura','Thomas','Black Card',29.99,20010,6)
+INTO memberships VALUES (524928811,'James','Jackson','Basic',10.00,20011,5)
+INTO memberships VALUES (524928812,'Megan','White','Black Card',29.99,20012,2)
+INTO memberships VALUES (524928813,'Robert','Harris','Basic',10.00,20013,3)
+INTO memberships VALUES (524928814,'Amanda','Martin','Black Card',29.99,20014,2)
+INTO memberships VALUES (524928815,'Kevin','Thompson','Basic',10.00,20015,4)
+SELECT * FROM dual;
