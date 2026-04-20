@@ -1,11 +1,11 @@
 Membership Database System (Oracle SQL) Created by Ashton Burgess
 
 
-Project Overview
+Project Overview:
 
-This project simulates a real-world membership management system built using Oracle SQL. It models a subscription-based business (such as a gym membership system) with full lifecycle tracking, automated history logging, and KPI-driven reporting.
-
-The system demonstrates how relational databases are used in operational systems and business intelligence reporting environments.
+   This project simulates a real-world membership management system built using Oracle SQL. It models a subscription-based business (such as a gym membership system) with full lifecycle tracking, automated history logging, and KPI-driven reporting.
+   
+   The system demonstrates how relational databases are used in operational systems and business intelligence reporting environments.
 
 Core Objectives:
    Design a normalized relational database schema
